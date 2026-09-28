@@ -1,0 +1,191 @@
+/* MADE BY JENISH MAGAR */
+/* STYLE FOR THE DANIEL CEASAR SITE */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #000000;
+  color: #ffffff;
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  letter-spacing: 1px;
+}
+
+/* TOP NAV BAR */
+
+div.topnav {
+  width: 100%;
+  border-bottom: 1px solid #ffffff;
+  padding: 18px 10px;
+  text-align: center;
+}
+
+div.topnav a {
+  color: #ffffff;
+  text-decoration: none;
+  margin-left: 14px;
+  margin-right: 14px;
+  font-size: 13px;
+  letter-spacing: 3px;
+}
+
+div.topnav a:hover {
+  text-decoration: underline;
+}
+
+/* HOME PAGE MIDDLE TEXT */
+
+div.herobox {
+  width: 100%;
+  height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+div.herotext {
+  font-size: 46px;
+  letter-spacing: 6px;
+  border-top: 1px solid #ffffff;
+  border-bottom: 1px solid #ffffff;
+  padding-top: 24px;
+  padding-bottom: 24px;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+div.homeintro {
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 13px;
+  line-height: 22px;
+  padding: 40px 20px;
+  text-align: center;
+  color: #cccccc;
+}
+
+/* GENERIC PAGE WRAP */
+
+div.pagewrap {
+  max-width: 780px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 50px 20px;
+}
+
+div.pagetitle {
+  font-size: 30px;
+  letter-spacing: 4px;
+  margin-bottom: 30px;
+  border-bottom: 1px solid #ffffff;
+  padding-bottom: 14px;
+}
+
+div.texblock {
+  font-size: 14px;
+  line-height: 24px;
+  margin-bottom: 22px;
+  color: #e0e0e0;
+}
+
+/* ALBUMS PAGE */
+
+div.albumrow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 26px;
+  margin-bottom: 26px;
+  border-bottom: 1px solid #333333;
+  padding-bottom: 26px;
+}
+
+div.albumcover {
+  width: 160px;
+  height: 160px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 12px;
+  letter-spacing: 2px;
+  border: 1px solid #ffffff;
+  padding: 8px;
+}
+
+div.cover1 {
+  background-color: #1a1a1a;
+  background-image: repeating-linear-gradient(45deg, #2b2b2b 0px, #2b2b2b 2px, #1a1a1a 2px, #1a1a1a 12px);
+}
+
+div.cover2 {
+  background-color: #101010;
+  background-image: radial-gradient(circle at center, #333333 0%, #101010 70%);
+}
+
+div.cover3 {
+  background-color: #0d0d0d;
+  background-image: repeating-linear-gradient(90deg, #262626 0px, #262626 1px, #0d0d0d 1px, #0d0d0d 18px);
+}
+
+div.cover4 {
+  background-color: #151515;
+  background-image: linear-gradient(180deg, #303030 0%, #0a0a0a 100%);
+}
+
+div.albuminfo {
+  flex-grow: 1;
+  min-width: 200px;
+}
+
+div.albumname {
+  font-size: 18px;
+  letter-spacing: 2px;
+  margin-bottom: 6px;
+}
+
+div.albumyear {
+  font-size: 11px;
+  color: #888888;
+  margin-bottom: 10px;
+}
+
+div.albumtext {
+  font-size: 13px;
+  line-height: 20px;
+  color: #cccccc;
+}
+
+/* SONGS PAGE */
+
+div.songrow {
+  display: flex;
+  border-bottom: 1px solid #333333;
+  padding: 12px 0px;
+  font-size: 14px;
+}
+
+div.songnum {
+  width: 40px;
+  color: #888888;
+}
+
+div.songname {
+  flex-grow: 1;
+}
+
+/* FOOTER */
+
+div.footerbox {
+  border-top: 1px solid #ffffff;
+  text-align: center;
+  padding: 20px;
+  font-size: 11px;
+  letter-spacing: 2px;
+  color: #888888;
+}
