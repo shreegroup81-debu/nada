@@ -1,191 +1,201 @@
-/* MADE BY JENISH MAGAR */
-/* STYLE FOR THE DANIEL CEASAR SITE */
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+/* Daniel Caesar site: shared stylesheet (bold cobalt / light theme)
+   Works with index.html, about.html, album.html, songs.html */
+
+:root {
+  --paper: #f4f7fb;
+  --ink: #0b1b3a;
+  --cobalt: #1f3fd1;
+  --sky: #dbe5ff;
+  --muted: #55648a;
+  --font: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
+
+*, *::before, *::after { box-sizing: border-box; }
 
 body {
-  background-color: #000000;
-  color: #ffffff;
-  font-family: "Helvetica Neue", Arial, sans-serif;
-  letter-spacing: 1px;
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font);
+  font-size: 1.05rem;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
 }
-
 /* TOP NAV BAR */
 
-div.topnav {
-  width: 100%;
-  border-bottom: 1px solid #ffffff;
-  padding: 18px 10px;
-  text-align: center;
+/* Navigation: left aligned bar with a heavy underline */
+.topnav {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  gap: 2rem;
+  padding: 0 clamp(1rem, 5vw, 3rem);
+  background: var(--paper);
+  border-bottom: 3px solid var(--ink);
 }
 
-div.topnav a {
-  color: #ffffff;
+.topnav a {
+  padding: 1rem 0 0.85rem;
+  color: var(--ink);
   text-decoration: none;
-  margin-left: 14px;
-  margin-right: 14px;
-  font-size: 13px;
-  letter-spacing: 3px;
+  font-weight: 700;
+  font-size: 0.85rem;
+  letter-spacing: 0.08em;
+  border-bottom: 6px solid transparent;
+  margin-bottom: -3px;
 }
 
-div.topnav a:hover {
-  text-decoration: underline;
+a:focus-visible {
+  outline: 3px solid var(--cobalt);
+  outline-offset: 3px;
 }
 
+/* Home: full cobalt block, type sits bottom left */
+.herobox {
+  display: flex;
+  align-items: flex-end;
+  min-height: 75vh;
+  padding: clamp(1.5rem, 5vw, 3rem);
+  background: var(--cobalt);
+  color: #fff;
+}
+
+.herotext {
+  max-width: 12ch;
+  font-size: clamp(3rem, 12vw, 8rem);
+  font-weight: 800;
+  line-height: 0.95;
+  letter-spacing: -0.03em;
+}
+
+.homeintro {
+  max-width: 40rem;
+  margin: 3.5rem clamp(1.5rem, 5vw, 3rem);
+  padding-left: 1.5rem;
+  border-left: 6px solid var(--cobalt);
+  font-size: clamp(1.3rem, 3vw, 1.9rem);
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+/* Inner pages */
+.pagewrap {
+  max-width: 50rem;
+  margin: 0 auto 0 0;
+  padding: 3.5rem clamp(1.5rem, 5vw, 3rem) 3rem;
+}
+
+.pagetitle {
+  display: inline-block;
+  margin-bottom: 2.5rem;
+  padding: 0.4rem 1rem;
+  background: var(--ink);
+  color: var(--paper);
+  font-size: clamp(1.4rem, 4vw, 2.2rem);
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  line-height: 1.2;
+}
 /* HOME PAGE MIDDLE TEXT */
+/* Body text: lowercase softens the all-caps source text.
+   Delete the text-transform lines to show it exactly as typed. */
+.texblock,
+.albumtext {
+  max-width: 60ch;
+  margin: 0 0 1.5rem;
+  color: var(--ink);
+  text-transform: lowercase;
+}
 
-div.herobox {
-  width: 100%;
-  height: 80vh;
+.texblock::first-letter,
+.albumtext::first-letter { text-transform: uppercase; }
+
+/* Albums */
+.albumrow {
   display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
+  gap: 2rem;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+  padding: 1.25rem;
+  background: var(--sky);
 }
 
-div.herotext {
-  font-size: 46px;
-  letter-spacing: 6px;
-  border-top: 1px solid #ffffff;
-  border-bottom: 1px solid #ffffff;
-  padding-top: 24px;
-  padding-bottom: 24px;
-  padding-left: 30px;
-  padding-right: 30px;
-}
-
-div.homeintro {
-  max-width: 600px;
-  margin-left: auto;
-  margin-right: auto;
-  font-size: 13px;
-  line-height: 22px;
-  padding: 40px 20px;
-  text-align: center;
-  color: #cccccc;
-}
-
-/* GENERIC PAGE WRAP */
-
-div.pagewrap {
-  max-width: 780px;
-  margin-left: auto;
-  margin-right: auto;
-  padding: 50px 20px;
-}
-
-div.pagetitle {
-  font-size: 30px;
-  letter-spacing: 4px;
-  margin-bottom: 30px;
-  border-bottom: 1px solid #ffffff;
-  padding-bottom: 14px;
-}
-
-div.texblock {
-  font-size: 14px;
-  line-height: 24px;
-  margin-bottom: 22px;
-  color: #e0e0e0;
-}
-
-/* ALBUMS PAGE */
-
-div.albumrow {
+.albumcover {
+  flex: 0 0 10rem;
+  width: 10rem;
+  aspect-ratio: 1;
   display: flex;
-  flex-wrap: wrap;
-  gap: 26px;
-  margin-bottom: 26px;
-  border-bottom: 1px solid #333333;
-  padding-bottom: 26px;
+  align-items: flex-end;
+  padding: 0.75rem;
+  color: #fff;
+  font-weight: 800;
+  font-size: 0.8rem;
+  letter-spacing: 0.04em;
+  line-height: 1.2;
+  background: var(--cobalt);
 }
 
-div.albumcover {
-  width: 160px;
-  height: 160px;
-  flex-shrink: 0;
+.cover2 { background: var(--cobalt); }
+.cover3 { background: var(--ink); }
+.cover4 { background: #4a68e8; }
+
+.albuminfo { flex: 1; min-width: 0; }
+
+.albumname {
+  font-size: 1.5rem;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  line-height: 1.2;
+}
+
+.albumyear {
+  margin-bottom: 0.75rem;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--cobalt);
+}
+
+.albumtext { margin-bottom: 0; }
+
+/* Songs */
+.songrow {
   display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  font-size: 12px;
-  letter-spacing: 2px;
-  border: 1px solid #ffffff;
-  padding: 8px;
+  align-items: baseline;
+  gap: 1.25rem;
+  padding: 0.8rem 1rem;
+  border-bottom: 2px solid var(--ink);
 }
 
-div.cover1 {
-  background-color: #1a1a1a;
-  background-image: repeating-linear-gradient(45deg, #2b2b2b 0px, #2b2b2b 2px, #1a1a1a 2px, #1a1a1a 12px);
+.songrow:first-of-type { border-top: 2px solid var(--ink); }
+
+.songnum {
+  flex: 0 0 2.5rem;
+  font-size: 1.4rem;
+  font-weight: 800;
+  font-variant-numeric: tabular-nums;
+  color: var(--cobalt);
 }
 
-div.cover2 {
-  background-color: #101010;
-  background-image: radial-gradient(circle at center, #333333 0%, #101010 70%);
+.songname { font-weight: 600; letter-spacing: 0.02em; }
+
+/* Footer */
+.footerbox {
+  margin-top: 3rem;
+  padding: 2rem clamp(1.5rem, 5vw, 3rem);
+  background: var(--ink);
+  color: var(--paper);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
 }
 
-div.cover3 {
-  background-color: #0d0d0d;
-  background-image: repeating-linear-gradient(90deg, #262626 0px, #262626 1px, #0d0d0d 1px, #0d0d0d 18px);
-}
-
-div.cover4 {
-  background-color: #151515;
-  background-image: linear-gradient(180deg, #303030 0%, #0a0a0a 100%);
-}
-
-div.albuminfo {
-  flex-grow: 1;
-  min-width: 200px;
-}
-
-div.albumname {
-  font-size: 18px;
-  letter-spacing: 2px;
-  margin-bottom: 6px;
-}
-
-div.albumyear {
-  font-size: 11px;
-  color: #888888;
-  margin-bottom: 10px;
-}
-
-div.albumtext {
-  font-size: 13px;
-  line-height: 20px;
-  color: #cccccc;
-}
-
-/* SONGS PAGE */
-
-div.songrow {
-  display: flex;
-  border-bottom: 1px solid #333333;
-  padding: 12px 0px;
-  font-size: 14px;
-}
-
-div.songnum {
-  width: 40px;
-  color: #888888;
-}
-
-div.songname {
-  flex-grow: 1;
-}
-
-/* FOOTER */
-
-div.footerbox {
-  border-top: 1px solid #ffffff;
-  text-align: center;
-  padding: 20px;
-  font-size: 11px;
-  letter-spacing: 2px;
-  color: #888888;
+/* Small screens */
+@media (max-width: 36rem) {
+  .topnav { gap: 1.1rem; }
+  .topnav a { font-size: 0.72rem; letter-spacing: 0.04em; }
+  .albumrow { flex-direction: column; gap: 1rem; }
+  .albumcover { width: 100%; max-width: 12rem; flex-basis: auto; }
 }
